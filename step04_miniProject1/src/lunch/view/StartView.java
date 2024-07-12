@@ -33,11 +33,11 @@ public class StartView {
 		Food food5 = new Food("패스트푸드", "롯데리아, 맥도날드, 맘스터치");
 
 		// 가게 목록
-		LunchType Western = new LunchType("양식", "달리 181", "레지아노 ");
-		LunchType China = new LunchType("중식", "모범반점", "샤오바오 ");
-		LunchType Japan = new LunchType("일식", "소마카츠", "오카와리");
-		LunchType Korean = new LunchType("한식", " 이선생", "김둘레순대국 ");
-		LunchType Fastfood = new LunchType("패스트푸드", "맥도날드",	"맘스터치");
+		LunchType Western = new LunchType("양식", "달리 181", "레지아노","안농");
+		LunchType China = new LunchType("중식", "모범반점", "샤오바오 ","안농");
+		LunchType Japan = new LunchType("일식", "소마카츠", "오카와리","안농");
+		LunchType Korean = new LunchType("한식", " 이선생", "김둘레순대국 ","안농");
+		LunchType Fastfood = new LunchType("패스트푸드", "맥도날드",	"맘스터치","안농");
 
 		// 기부자, 수혜자가 매핑된 실제 진행되는 "재능 기부 프로젝트"
 		// 프로젝트명, 팀, 음식, 음식종류, 시작시간, 종료시간, 특이사항
