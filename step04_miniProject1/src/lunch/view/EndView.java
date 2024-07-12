@@ -1,21 +1,10 @@
-/** 
- * PROJECT  : 재능기부 프로젝트
- * NAME  :  EndView.java
- * DESC  : 재능 기부 정보 출력 클래스
- * 
- * @author  
- * @version 1.0
-*/
 
 package lunch.view;
-
 import java.util.ArrayList;
-
 import lunch.model.dto.LunchProject;
-
 public class EndView {
 	
-	//진행중인 특정 프로젝트 출력 
+	//진행중인 특정 프로젝트 출력
 	public static void projectView(LunchProject project){
 		if(project != null) {
 			System.out.println(project);	//project.toString()	
@@ -25,7 +14,7 @@ public class EndView {
 	}
 	
 	//진행중인 모든 프로젝트 출력
-	public static void projectListView(ArrayList<LunchProject> allProbonoProject){
+	public static void lunchListView(ArrayList<LunchProject> allProbonoProject){
 		
 		int index = 1;
 		for(LunchProject project : allProbonoProject) {
@@ -36,15 +25,11 @@ public class EndView {
 			
 		}
 	}
-
 	public static void successMessage(String message) {
 		System.out.println(message);
 	}
 	
 }
-
-
-
 
 
 
