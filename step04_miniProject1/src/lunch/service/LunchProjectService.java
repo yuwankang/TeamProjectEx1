@@ -1,115 +1,104 @@
-/**
- * PROJECT  : 재능기부 프로젝트
- * NAME  :  TalentDonationProjectService.java
- * DESC  :  재능 기부 프로젝트를 저장, 수정, 삭제, 검색하는 서비스 로직
- *
- * @author
- * @version 1.0
-*/
 package lunch.service;
-import java.util.ArrayList;
+
 import lunch.model.dto.Food;
 import lunch.model.dto.LunchProject;
 import lunch.model.dto.Team;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class LunchProjectService {
-	// singleton design pattern
-	private static LunchProjectService instance = new LunchProjectService();
-	/**
-	 * 진행중인 Project를 저장
-	 */
-	private ArrayList<LunchProject> teamProjectList = new ArrayList<LunchProject>();
-	private LunchProjectService() {}
-	public static LunchProjectService getInstance() {
-		return instance;
-	}
-	/**
-	 * 모든 Project 검색
-	 *
-	 * @return 모든 Project
-	 */
-	public ArrayList<LunchProject> getTeamProjectsList() {
-		return teamProjectList;
-	}
-	// TO DO - 구현 및 완성해야 할 job
-	/**
-	 * Project 이름으로 검색 - 객체된 Project 반환하기
-	 *
-	 * @param projectName 프로젝트 이름
-	 * @return TalentDonationProject 검색된 프로젝트
-	 */
-	public LunchProject getTeamProject(String projectTeam) {
-		for (LunchProject Team : teamProjectList) {
-			if (Team != null && Team.getTeamName().equals(projectTeam)) {
-				return Team; //메소드 자체의 종료
-			}
-		}
-		return null;
-	}
-	// TO DO
-	/**
-	 * 새로운 Project 추가
-	 *
-	 * @param project 저장하고자 하는 새로운 프로젝트
-	 */
-	
-	/* Controller의 메소드
-	 * 	public void donationProjectInsert(TalentDonationProject project){}
-	 * */
-	public void teamProjectInsert(LunchProject project) throws Exception {
-		
-		LunchProject p = getTeamProject(project.getTeamName());
-		if (p != null) {
-			throw new Exception("해당 project명은 이미 존재합니다. 재 확인하세요");
-		}
-		teamProjectList.add(project);
-		
-	}
-	/**
-	 * Project의 기부자 수정 - 프로젝트 명으로 검색해서 해당 프로젝트의 기부자 수정
-	 *
-	 * @param projectName 프로젝트 이름
-	 * @param people      기부자
-	 */
-	public void teamProjectUpdate(String projectName, Team people) throws Exception {
-		for (LunchProject project : teamProjectList) {
-			if (project != null && project.getTeamName().equals(projectName)) {
-				if (people != null) {
-					project.setProjectTeam(people);
-					break;
-				} else {
-					throw new Exception("프로젝트 이름은 있으나 기부자 정보 누락 재확인 하세요");
-				}
-			} else {
-				throw new Exception("프로젝트 이름과 기부자 정보 재 확인 하세요");
-			}
-		}
-	}
-	// TO DO
-	/**
-	 * Project의 수혜자 수정 - 프로젝트 명으로 검색해서 해당 프로젝트의 수혜자 수정
-	 *
-	 * @param projectName 프로젝트 이름
-	 * @param people      수혜자
-	 */
-	public void foodProjectUpdate(String projectName, Food people) {
-		for (LunchProject project : teamProjectList) {
-			if (project != null && project.getTeamName().equals(projectName)) {
-				project.setProjectFood(people);
-				break;
-			}
-		}
-	}
-	// TO DO
-	/**
-	 * Project 삭제 - 프로젝트 명으로 해당 프로젝트 삭제
-	 *
-	 * @param projectName 삭제하고자 하는 프로젝트 이름
-	 */
-	public void teamProjectDelete(String projectName) {
-		LunchProject project = getTeamProject(projectName);
-		if (project != null) {
-			teamProjectList.remove(project);
-		}
-	}
-	
+    // Singleton pattern
+    private static final LunchProjectService instance = new LunchProjectService();
+    private final List<LunchProject> teamProjectList = new ArrayList<>();
+
+    private LunchProjectService() {}
+
+    public static LunchProjectService getInstance() {
+        return instance;
+    }
+
+    /**
+     * 모든 Project 검색
+     *
+     * @return 모든 Project 목록
+     */
+    public List<LunchProject> getTeamProjectsList() {
+        return new ArrayList<>(teamProjectList);
+    }
+
+    /**
+     * Project 이름으로 검색 - 해당 Project 반환
+     *
+     * @param projectName 프로젝트 이름
+     * @return 검색된 프로젝트
+     */
+    public LunchProject getTeamProject(String projectName) {
+        for (LunchProject project : teamProjectList) {
+            if (project != null && project.getTeamName().equals(projectName)) {
+                return project;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 새로운 Project 추가
+     *
+     * @param project 저장할 새로운 프로젝트
+     * @throws Exception 프로젝트 이름이 이미 존재할 경우
+     */
+    public void teamProjectInsert(LunchProject project) throws Exception {
+        if (getTeamProject(project.getTeamName()) != null) {
+            throw new Exception("해당 프로젝트 이름은 이미 존재합니다. 다시 확인하세요.");
+        }
+        teamProjectList.add(project);
+    }
+
+    /**
+     * 프로젝트의 팀 정보 수정
+     *
+     * @param projectName 프로젝트 이름
+     * @param team 수정할 팀 정보
+     * @throws Exception 프로젝트 또는 팀 정보가 존재하지 않을 경우
+     */
+    public void teamProjectUpdate(String projectName, Team team) throws Exception {
+        LunchProject project = getTeamProject(projectName);
+        if (project == null) {
+            throw new Exception("프로젝트 이름을 다시 확인하세요.");
+        }
+        if (team == null) {
+            throw new Exception("수정할 팀 정보가 누락되었습니다. 다시 확인하세요.");
+        }
+        project.setProjectTeam(team);
+    }
+
+    /**
+     * 프로젝트의 음식 정보 수정
+     *
+     * @param projectName 프로젝트 이름
+     * @param food 수정할 음식 정보
+     * @throws Exception 프로젝트가 존재하지 않을 경우
+     */
+    public void foodProjectUpdate(String projectName, Food food) throws Exception {
+        LunchProject project = getTeamProject(projectName);
+        if (project == null) {
+            throw new Exception("프로젝트 이름을 다시 확인하세요.");
+        }
+        project.setProjectFood(food);
+    }
+
+    /**
+     * 프로젝트 삭제
+     *
+     * @param projectName 삭제할 프로젝트 이름
+     * @throws Exception 프로젝트가 존재하지 않을 경우
+     */
+    public void teamProjectDelete(String projectName) throws Exception {
+        LunchProject project = getTeamProject(projectName);
+        if (project == null) {
+            throw new Exception("프로젝트 이름을 다시 확인하세요.");
+        }
+        teamProjectList.remove(project);
+    }
 }

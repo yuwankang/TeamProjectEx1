@@ -1,6 +1,8 @@
 
 package lunch.view;
 import java.util.ArrayList;
+import java.util.List;
+
 import lunch.model.dto.LunchProject;
 public class EndView {
 	
@@ -14,10 +16,10 @@ public class EndView {
 	}
 	
 	//진행중인 모든 프로젝트 출력
-	public static void projectListView(ArrayList<LunchProject> allProbonoProject){
+	public static void projectListView(List<LunchProject> list){
 		
 		int index = 1;
-		for(LunchProject project : allProbonoProject) {
+		for(LunchProject project : list) {
 			
 			if(project != null){
 				System.out.println("[진행 중인 project : " + (index++) + "] " + project);
