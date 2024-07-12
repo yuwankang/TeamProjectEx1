@@ -17,25 +17,25 @@ public class StartView {
 
 	public static void main(String[] args) {
 		// 기부자 정보 - 사번, 사원명, 이메일, 기부하기를 희망하는 재능기부 종류
-		team team1 = new team("1팀", "BTS", "아이유", "블랙핑크", "김범수", "양식");
-		team team2 = new team("2팀", "손흥민", "황희찬", "이강인", "김민재", "중식");
-		team team3 = new team("3팀", "유재석", "박명수", "정형돈", "정준하", "일식");
-		team team4 = new team("4팀", "강호동", "이수근", "김종민", "은지원", "한식");
-		team team5 = new team("5팀", "강유완", "곽병찬", "구동길", "김상민", "패스트푸드");
+		Team team1 = new Team("1팀", "BTS", "아이유", "블랙핑크", "김범수", "양식");
+		Team team2 = new Team("2팀", "손흥민", "황희찬", "이강인", "김민재", "중식");
+		Team team3 = new Team("3팀", "유재석", "박명수", "정형돈", "정준하", "일식");
+		Team team4 = new Team("4팀", "강호동", "이수근", "김종민", "은지원", "한식");
+		Team team5 = new Team("5팀", "강유완", "곽병찬", "구동길", "김상민", "패스트푸드");
 
 		// 음식 종류
-		Team food1 = new Team("양식", "슈바이처 프로젝트");
-		Team food2 = new Team("중식", "오드리햅번 프로젝트");
-		Team food3 = new Team("일식", "마더테레사 프로젝트");
-		Team food4 = new Team("한식", "슈바이처 프로젝트");
-		Team food5 = new Team("패스트푸드", "슈바이처 프로젝트");
+		Food food1 = new Food("양식", "파스타, 피자");
+		Food food2 = new Food("중식", "짜장면, 짬뽕, 탕수육");
+		Food food3 = new Food("일식", "초밥, 라멘, 돈부리");
+		Food food4 = new Food("한식", "칼국수, 김치찌개");
+		Food food5 = new Food("패스트푸드", "롯데리아, 맥도날드, 맘스터치");
 
 		// 가게 목록
-		LunchProjectType Western = new LunchProjectType("양식", "", " ");
-		LunchProjectType China = new LunchProjectType("중식", " ", " ");
-		LunchProjectType Japan = new LunchProjectType("일식", " ", " ");
-		LunchProjectType Korean = new LunchProjectType("한식", " ", " ");
-		LunchProjectType Fastfood = new LunchProjectType("패스트푸드", " ",	" ");
+		LunchType Western = new LunchType("양식", "", " ");
+		LunchType China = new LunchType("중식", " ", " ");
+		LunchType Japan = new LunchType("일식", " ", " ");
+		LunchType Korean = new LunchType("한식", " ", " ");
+		LunchType Fastfood = new LunchType("패스트푸드", " ",	" ");
 
 		// 기부자, 수혜자가 매핑된 실제 진행되는 "재능 기부 프로젝트"
 		// 프로젝트명, 팀, 음식, 음식종류, 시작시간, 종료시간, 특이사항
