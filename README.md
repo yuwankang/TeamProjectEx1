@@ -36,7 +36,56 @@
 3. '1번' Project 검색
 4. '1번' Project의 팀 순서 변경(수정) 후 해당 Project 검색
 5. '1번' Project 삭제 후 삭제한 Project 존재 여부 검색
+ 
+ ***
+ ### StartView 클래스
+```
++-------------------+             +--------------------------------+
+|      Team         |<------------|       StartView                |
++-------------------+             +--------------------------------+
+| -teamName: String |             | +main(args: String[]): void    |
+| -members: String[]|             +--------------------------------+
++-------------------+
 
++-------------------+             +-------------------------------+
+|      Food         |<------------|       StartView                |
++-------------------+             +-------------------------------+
+| -type: String     |             | +main(args: String[]): void   |
+| -menu: String     |             +-------------------------------+
++-------------------+
 
++-------------------+             +-------------------------------+
+|    LunchType      |<------------|       StartView                |
++-------------------+             +-------------------------------+
+| -type: String     |             | +main(args: String[]): void   |
+| -places: String[] |             +-------------------------------+
++-------------------+
+
++-------------------+             +-------------------------------+
+|  LunchProject     |<------------|       StartView                |
++-----------------------+         +-------------------------------+
+| -name: String         |         | +main(args: String[]): void   |
+| -type: String         |         +-------------------------------+
+| -team: Team           |
+| -food: Food           |
+| -lunchType: LunchType |
+| -startTime: String    |
+| -endTime: String      |
+| -remarks: String      |
++-------------------+
+
++----------------------+                                     +-------------------------------+
+|LunchProjectController|<------------------------------------|       StartView               |
++--------------------------------------------------------+   +-------------------------------+
+| +getInstance(): LunchProjectController                 |
+| +TeamProjectInsert(project: LunchProject): void        |
+| +getTeamProjectsList(): void                           |
+| +getTeamProject(name: String): void                    |
+| +teamProjectUpdate(name: String, newTeam: Team): void  |
+| +teamProjectDelete(name: String): void                 |
++--------------------------------------------------------+
+
+```
+ 
 
 
