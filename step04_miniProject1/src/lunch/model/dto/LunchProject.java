@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class LunchProject {
+	private String TeamName;
 	/** 프로젝트 고유 이름 : lunch- 프로젝트 구분 데이터 */
 	private String food;
 	/** 팀  : 팀번호 , 팀원명, 팀원명 정보 */
@@ -26,6 +27,8 @@ public class LunchProject {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
+		builder.append("팀 순서 : ");
+		builder.append(TeamName);
 		builder.append("음식종류 : ");
 		builder.append(food);
 		builder.append(", 팀 : ");
