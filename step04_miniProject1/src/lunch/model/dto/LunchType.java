@@ -1,41 +1,43 @@
-/** 
+/**
  * PROJECT  : 재능기부 프로젝트
  * NAME  :  TalentDonationType.java
  * DESC  :  재능기부 종류(Data)
- * 
- * @author  
+ *
+ * @author
  * @version 1.0
 */
 package lunch.model.dto;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter  
+@Getter
 @Setter
 public class LunchType {
 	/** 재능 기부 타입(종류) */
-	private String donationType; 
+	private String foodType;
 	
 	/** 재능 기부 활동 영역 */
-	private String activityArea;
+	private String restaurant1;
 	
-	/** 재능 기부 활동 예시 */
-	private String activityDetails;
- 
+	/** 재능 기부 활동 영역 */
+	private String restaurant2;
+	
+	/** 재능 기부 활동 영역 */
+	private String restaurant3;
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("기부 타입 : ");
-		builder.append(donationType);
-		builder.append(", 기부 활동 영역 : ");
-		builder.append(activityArea);
-		builder.append(", 기부 활동 예시 : ");
-		builder.append(activityDetails);
+		builder.append("음식 종류 : ");
+		builder.append(foodType);
+		builder.append(", 맛집 1 : ");
+		builder.append(restaurant1);
+		builder.append(", 맛집 2 : ");
+		builder.append(restaurant2);
+		builder.append(", 맛집 3 : ");
+		builder.append(restaurant3);
 		return builder.toString();
 	}
 }

@@ -12,7 +12,7 @@ import lombok.ToString;
 @ToString
 public class Team {
 	// 팀번호
-	private int no;
+	private String no;
 	
 	//이름
 	private String name1;

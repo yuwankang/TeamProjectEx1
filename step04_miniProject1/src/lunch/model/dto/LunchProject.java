@@ -1,45 +1,28 @@
-/** 
- * PROJECT  : 재능기부 프로젝트
- * NAME  :  TalentDonationProject.java
- * DESC  :  진행중인 프로젝트 정보(Data)
- * 
- * @author  
- * @version 1.0         
-*/
 package lunch.model.dto;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
-@Getter 
+@Getter
 public class LunchProject {
-    
-	/** 프로젝트 고유 이름 : PK- 프로젝트 구분 데이터 */
-	private String talentDonationProjectName; 
-
-	/** 기부자 : 사번, 이름, 이메일, 기부자 정보 */
-	private Team projectDonator;  
+	/** 프로젝트 고유 이름 : lunch- 프로젝트 구분 데이터 */
+	private String lunchProjectName;
+	/** 팀  : 팀번호 , 팀원명, 팀원명 정보 */
+	private Team projectTeam;
 		
-	/** 수혜자 */
-	private Food projectBeneficiary;
-
-	/** 재능 기부 타입 */
-	private LunchType talentDonationType;
-
+	/** 음식 */
+	private Food projectFood;
+	/** 점심 타입 */
+	private LunchType LunchType;
 	/** 프로젝트 시작일 */
 	private String startDate;
-
 	/** 프로젝트 종료일 */
 	private String endDate;
-
 	/** 진행되는 project의 상세 내용 */
 	private String talentDonationProjectDetail;
-
 	
 	@Override
 	public String toString() {
