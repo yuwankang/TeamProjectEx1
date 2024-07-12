@@ -17,6 +17,9 @@ import lunch.model.dto.TalentDonationProject;
 import lunch.model.dto.TalentDonationType;
 
 public class StartView {
+	public static void main(String[] args) {
+		System.out.println("hello world");
+	}
 
 	public static void main(String[] args) {
 
