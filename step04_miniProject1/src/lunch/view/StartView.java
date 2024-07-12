@@ -33,19 +33,19 @@ public class StartView {
 		// 기부자, 수혜자가 매핑된 실제 진행되는 "재능 기부 프로젝트"
 		// 프로젝트명, 팀, 음식, 음식종류, 시작시간, 종료시간, 특이사항
 		LunchProject WesternProject
-		= new LunchProject("1번 ", "양식", team1, food1, Western, "13:00~", "2024-12-03"," ");
+		= new LunchProject("1번 ", "양식", team1, food1, Western, "13:00~", "14:00","Délicieux ");
 							        		
 		LunchProject ChinaProject
-		= new LunchProject("2번 ","중식", team2, food2, China, "13:00~", "2024-12-03", " ");
+		= new LunchProject("2번 ","중식", team2, food2, China, "13:00~", "14:00", "好吃 ");
 		
 		LunchProject JapanProject
-		= new LunchProject("3번 ","일식", team3, food3, Japan, "13:00~", "2024-12-03", " ");
+		= new LunchProject("3번 ","일식", team3, food3, Japan, "13:00~", "14:00", "おいしい");
 		
 		LunchProject KoreanProject
-		= new LunchProject("4번 ","한식", team4, food4, Korean, "13:00~", "2024-12-03", " ");
+		= new LunchProject("4번 ","한식", team4, food4, Korean, "13:00~", "14:00", "맛있다.");
 		
 		LunchProject FastfoodProject
-		= new LunchProject("5번 ","패스트푸드", team5, food5, Fastfood, "13:00~", "2024-12-03", "아토피 무상 치료");
+		= new LunchProject("5번 ","패스트푸드", team5, food5, Fastfood, "13:00~", "14:00", "Delicious");
 		 
 		// 데이터 구성 후 서비스 로직 실행
 		LunchProjectController controller = LunchProjectController.getInstance();
