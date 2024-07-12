@@ -1,4 +1,4 @@
-package lunch.controller;
+package probono.controller;
 
 import lunch.model.dto.LunchProject;
 import lunch.model.dto.LunchProjectType;
@@ -85,7 +85,7 @@ public class LunchProjectController {
 	 * @param projectName 프로젝트 이름
 	 * @param people      음식
 	 */
-	public void foodProjectUpdate(String projectName, food food) {
+	public void foodProjectUpdate(String projectName, Team food) {
 		service.foodProjectUpdate(projectName, food);
 	}
 

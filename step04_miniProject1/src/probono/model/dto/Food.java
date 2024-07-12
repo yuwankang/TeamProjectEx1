@@ -17,7 +17,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter  
 @Setter
-public class Beneficiary {
+public class Food {
 	/** 수혜자 번호 : pk*/
 	private int no;
 

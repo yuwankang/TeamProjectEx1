@@ -11,24 +11,24 @@ package probono.service;
 
 import java.util.ArrayList;
 
-import probono.model.dto.Beneficiary;
-import probono.model.dto.Donator;
-import probono.model.dto.TalentDonationProject;
+import probono.model.dto.Food;
+import probono.model.dto.Team;
+import probono.model.dto.LunchProject;
 
 
-public class TalentDonationProjectService {
+public class LunchProjectService {
 
 	// singleton design pattern
-	private static TalentDonationProjectService instance = new TalentDonationProjectService();
+	private static LunchProjectService instance = new LunchProjectService();
 
 	/**   
 	 * 진행중인 Project를 저장
 	 */
-	private ArrayList<TalentDonationProject> donationProjectList = new ArrayList<TalentDonationProject>();
+	private ArrayList<LunchProject> donationProjectList = new ArrayList<LunchProject>();
 
-	private TalentDonationProjectService() {}
+	private LunchProjectService() {}
 
-	public static TalentDonationProjectService getInstance() {
+	public static LunchProjectService getInstance() {
 		return instance;
 	}
 
@@ -37,7 +37,7 @@ public class TalentDonationProjectService {
 	 * 
 	 * @return 모든 Project
 	 */
-	public ArrayList<TalentDonationProject> getDonationProjectsList() {
+	public ArrayList<LunchProject> getDonationProjectsList() {
 		return donationProjectList;
 	}
 
@@ -48,8 +48,8 @@ public class TalentDonationProjectService {
 	 * @param projectName 프로젝트 이름
 	 * @return TalentDonationProject 검색된 프로젝트
 	 */
-	public TalentDonationProject getDonationProject(String projectName) {
-		for (TalentDonationProject project : donationProjectList) {
+	public LunchProject getDonationProject(String projectName) {
+		for (LunchProject project : donationProjectList) {
 			if (project != null && project.getTalentDonationProjectName().equals(projectName)) {
 				return project; //메소드 자체의 종료
 			}
@@ -68,9 +68,9 @@ public class TalentDonationProjectService {
 	/* Controller의 메소드 
 	 * 	public void donationProjectInsert(TalentDonationProject project){}
 	 * */
-	public void donationProjectInsert(TalentDonationProject project) throws Exception {
+	public void donationProjectInsert(LunchProject project) throws Exception {
 		
-		TalentDonationProject p = getDonationProject(project.getTalentDonationProjectName());
+		LunchProject p = getDonationProject(project.getTalentDonationProjectName());
 
 		if (p != null) {
 			throw new Exception("해당 project명은 이미 존재합니다. 재 확인하세요");
@@ -86,9 +86,9 @@ public class TalentDonationProjectService {
 	 * @param projectName 프로젝트 이름
 	 * @param people      기부자
 	 */
-	public void donationProjectUpdate(String projectName, Donator people) throws Exception {
+	public void donationProjectUpdate(String projectName, Team people) throws Exception {
 
-		for (TalentDonationProject project : donationProjectList) {
+		for (LunchProject project : donationProjectList) {
 
 			if (project != null && project.getTalentDonationProjectName().equals(projectName)) {
 
@@ -113,9 +113,9 @@ public class TalentDonationProjectService {
 	 * @param projectName 프로젝트 이름
 	 * @param people      수혜자
 	 */
-	public void beneficiaryProjectUpdate(String projectName, Beneficiary people) {
+	public void beneficiaryProjectUpdate(String projectName, Food people) {
 
-		for (TalentDonationProject project : donationProjectList) {
+		for (LunchProject project : donationProjectList) {
 
 			if (project != null && project.getTalentDonationProjectName().equals(projectName)) {
 
@@ -134,7 +134,7 @@ public class TalentDonationProjectService {
 	 * @param projectName 삭제하고자 하는 프로젝트 이름
 	 */
 	public void donationProjectDelete(String projectName) {
-		TalentDonationProject project = getDonationProject(projectName);
+		LunchProject project = getDonationProject(projectName);
 
 		if (project != null) {
 			donationProjectList.remove(project);

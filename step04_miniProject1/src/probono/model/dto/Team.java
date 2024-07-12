@@ -19,7 +19,7 @@ import lombok.ToString;
 @Getter
 @Setter  
 @ToString  
-public class Donator {
+public class Team {
 	/** 기부자 사번 */
 	private int empno;
 	

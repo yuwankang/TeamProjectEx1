@@ -24,11 +24,11 @@ public class StartView {
 		team team5 = new team("5팀", "강유완", "곽병찬", "구동길", "김상민", "패스트푸드");
 
 		// 음식 종류
-		food food1 = new food("양식", "슈바이처 프로젝트");
-		food food2 = new food("중식", "오드리햅번 프로젝트");
-		food food3 = new food("일식", "마더테레사 프로젝트");
-		food food4 = new food("한식", "슈바이처 프로젝트");
-		food food5 = new food("패스트푸드", "슈바이처 프로젝트");
+		Team food1 = new Team("양식", "슈바이처 프로젝트");
+		Team food2 = new Team("중식", "오드리햅번 프로젝트");
+		Team food3 = new Team("일식", "마더테레사 프로젝트");
+		Team food4 = new Team("한식", "슈바이처 프로젝트");
+		Team food5 = new Team("패스트푸드", "슈바이처 프로젝트");
 
 		// 가게 목록
 		LunchProjectType Western = new LunchProjectType("양식", "", " ");

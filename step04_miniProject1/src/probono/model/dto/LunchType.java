@@ -17,7 +17,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter  
 @Setter
-public class TalentDonationType {
+public class LunchType {
 	/** 재능 기부 타입(종류) */
 	private String donationType; 
 	

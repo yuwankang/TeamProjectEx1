@@ -11,12 +11,12 @@ package probono.view;
 
 import java.util.ArrayList;
 
-import probono.model.dto.TalentDonationProject;
+import probono.model.dto.LunchProject;
 
 public class EndView {
 	
 	//진행중인 특정 프로젝트 출력 
-	public static void projectView(TalentDonationProject project){
+	public static void projectView(LunchProject project){
 		if(project != null) {
 			System.out.println(project);	//project.toString()	
 		}else {
@@ -25,10 +25,10 @@ public class EndView {
 	}
 	
 	//진행중인 모든 프로젝트 출력
-	public static void projectListView(ArrayList<TalentDonationProject> allProbonoProject){
+	public static void projectListView(ArrayList<LunchProject> allProbonoProject){
 		
 		int index = 1;
-		for(TalentDonationProject project : allProbonoProject) {
+		for(LunchProject project : allProbonoProject) {
 			
 			if(project != null){
 				System.out.println("[진행 중인 project : " + (index++) + "] " + project);

@@ -17,19 +17,19 @@ import lombok.Setter;
 @AllArgsConstructor
 @Setter
 @Getter 
-public class TalentDonationProject {
+public class LunchProject {
     
 	/** 프로젝트 고유 이름 : PK- 프로젝트 구분 데이터 */
 	private String talentDonationProjectName; 
 
 	/** 기부자 : 사번, 이름, 이메일, 기부자 정보 */
-	private Donator projectDonator;  
+	private Team projectDonator;  
 		
 	/** 수혜자 */
-	private Beneficiary projectBeneficiary;
+	private Food projectBeneficiary;
 
 	/** 재능 기부 타입 */
-	private TalentDonationType talentDonationType;
+	private LunchType talentDonationType;
 
 	/** 프로젝트 시작일 */
 	private String startDate;
