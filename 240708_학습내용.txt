@@ -1,0 +1,41 @@
+jdk - jdk17 jdk.java.net.archive/
+ide - sts spring.io/
+    -.jar / cmd / java -jar s(tab)
+    -web 개발 가능한 plugin 추가 설정/ web devloper
+    -java 개발 및 실행해 보기
+        file명.java 개발 - 개발자만 인지하는 코드 구조
+        file명.class - 컴파일 과정으로 실행파일로 변환되어 생성
+                        (byte code 실행 파일)
+                참고:
+                    webserver에는 실행 파일들 배포햏서 서비스
+                    *.java 파일은 필요없다
+                    *.class 파일들을 *.jar로 변환해서 서버에 배포
+
+                컴파일 방법
+                    >javac file.java
+                    문법 검증 후 문법 이상이 없다면 *.class 생성
+                실행 방법
+                    >java file
+                *javac.exe와 java.exe 프로그램 경로 : jdk17/bin/
+
+Linux
+    -window 설치 위에 설치
+        os가 두 개
+            window: host
+            linux: geust
+    -타 os 설치를 위한 sw
+        -virtualbox
+    
+    -linux 사용 주 목적
+        -윈도우보다 안정적
+        -서버 os로 주로 사용
+    -종류
+        ubuntu 22.04 - server: 명령어로만 제어
+            설치 프로그램들 다 명령어로 다운로드 및 설치
+
+    - host와 guest 통신을 위한 설정
+        -vb에 NAT 주소 전환 규약설정
+        -open ssh 프로토콜 활성화 22port 통신
+
+
+linux 명령어: clear, who

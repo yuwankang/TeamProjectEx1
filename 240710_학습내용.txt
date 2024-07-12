@@ -1,0 +1,25 @@
+-----------------0709리뷰-------------------
+7.lombok 설치
+    1.tool에 매핑
+        STS 등등 한번만 설정 / 다운로드 -> java -jar lombok.jar -> sts 디렉토리에 lombok.jar 자동운영
+                            -> sts.ini라는 설정파일에 자동 등록
+    2.project에 library 코드에서 사용하기 위한 셋팅
+
+8.maven
+    jdk에서 내장되어 있지 않은 library를 내 로컬 시스템에 자동 다운로드하게 하는 tool
+    개발 시에 필요한 library = 의존 관계 library
+    sts에서 plug in 형식으로 보유
+
+--------------시작--------------------
+1.데이터 타입 종류
+2.메소드 유연한 개발(구현, 호출)
+3.생성자 학습
+4.최적화된 다양한 개발 및 유지보수 고려한 패턴
+    1.builder partten 지원 api
+        -lombok
+    2.jUnit 단위 test api
+        -실행을 위한 필수 메소드
+            public static void main(String[] args){}
+        -web인 경우 server는 필수
+            url의 요청으로 개발 서비스 실행 요청 구조
+            main() 불필요
