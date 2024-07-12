@@ -7,11 +7,11 @@
  * @version 1.0
 */
 
-package probono.view;
+package lunch.view;
 
 import java.util.ArrayList;
 
-import probono.model.dto.LunchProject;
+import lunch.model.dto.LunchProject;
 
 public class EndView {
 	

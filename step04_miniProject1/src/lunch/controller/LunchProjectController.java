@@ -1,4 +1,4 @@
-package probono.controller;
+package lunch.controller;
 
 import lunch.model.dto.LunchProject;
 import lunch.model.dto.LunchProjectType;

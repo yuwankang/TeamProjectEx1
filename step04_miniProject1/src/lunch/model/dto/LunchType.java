@@ -6,7 +6,7 @@
  * @author  
  * @version 1.0
 */
-package probono.model.dto;
+package lunch.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package probono.view;
+package lunch.view;
 
 public class FailView {
 	

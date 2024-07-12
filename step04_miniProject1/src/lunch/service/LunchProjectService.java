@@ -7,13 +7,13 @@
  * @version 1.0
 */
 
-package probono.service;
+package lunch.service;
 
 import java.util.ArrayList;
 
-import probono.model.dto.Food;
-import probono.model.dto.Team;
-import probono.model.dto.LunchProject;
+import lunch.model.dto.Food;
+import lunch.model.dto.LunchProject;
+import lunch.model.dto.Team;
 
 
 public class LunchProjectService {
