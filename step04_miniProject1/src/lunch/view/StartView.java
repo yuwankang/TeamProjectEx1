@@ -65,7 +65,7 @@ public class StartView {
 		controller.getTeamProject("1번 ");
 		
 		//한식 변경하기
-		System.out.println("\n*** 04. '1번 ' Project의 기부자 변경(수정) 후 해당 Project 검색 ***");
+		System.out.println("\n*** 04. '1번 ' Project의 팀순서 변경(수정) 후 해당 Project 검색 ***");
 		controller.teamProjectUpdate("1번 ", team5);
 		controller.getTeamProject("1번 ");
 		
