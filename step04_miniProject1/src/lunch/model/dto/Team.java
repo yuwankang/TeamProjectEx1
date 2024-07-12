@@ -1,11 +1,4 @@
-/** 
- * PROJECT  : 재능기부 프로젝트
- * NAME  :  Donator.java
- * DESC  :  기부자 정보(Data)
- * 
- * @author  김혜경
- * @version 1.0
-*/
+
 package lunch.model.dto;
 
 import lombok.AllArgsConstructor;
@@ -20,19 +13,21 @@ import lombok.ToString;
 @Setter  
 @ToString  
 public class Team {
-	/** 기부자 사번 */
-	private int empno;
+	// 팀번호
+	private int no;
 	
-	/** 기부자 이름 */  
-	private String ename;
+	//이름
+	private String name1;
 	
-	/** 기부자 이메일 */
-	private String email;
+	private String name2;
 	
-	/** 기부자 재능 */
-	private String talent;
-
-	@Override  //재정의 표현 생략도 가능
+	private String name3;
+	
+	private String name4;
+	
+	private String food;
+	
+	@Override  
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("기부를 희망하는 사원번호 : ");
