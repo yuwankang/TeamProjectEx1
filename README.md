@@ -27,11 +27,11 @@
   - Team team5 = new Team("5팀", "강유완", "곽병찬", "구동길", "김상민", "패스트푸드");
   
   - // 음식 종류
-  - food food1 = new food("양식", "슈바이처 프로젝트");
-  - food food2 = new food("중식", "오드리햅번 프로젝트");
-  - food food3 = new food("일식", "마더테레사 프로젝트");
-  - food food4 = new food("한식", "슈바이처 프로젝트");
-  - food food5 = new food("패스트푸드", "슈바이처 프로젝트");
+  - Food food1 = new Food("양식", "파스타, 피자");
+  - Food food2 = new Food("중식", "짜장면, 마라탕");
+  - Food food3 = new Food("일식", "초밥, 라멘");
+  - Food food4 = new Food("한식", "김치찌개, 제육볶음");
+  - Food food5 = new Food("패스트푸드", "맥도날드, 맘스터치");
 
 
 
