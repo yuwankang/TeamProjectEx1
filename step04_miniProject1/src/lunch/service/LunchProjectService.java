@@ -105,7 +105,7 @@ public class LunchProjectService {
 	 *
 	 * @param projectName 삭제하고자 하는 프로젝트 이름
 	 */
-	public void donationProjectDelete(String projectName) {
+	public void teamProjectDelete(String projectName) {
 		LunchProject project = getTeamProject(projectName);
 		if (project != null) {
 			teamProjectList.remove(project);

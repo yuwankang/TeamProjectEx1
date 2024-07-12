@@ -14,7 +14,7 @@ public class EndView {
 	}
 	
 	//진행중인 모든 프로젝트 출력
-	public static void lunchListView(ArrayList<LunchProject> allProbonoProject){
+	public static void projectListView(ArrayList<LunchProject> allProbonoProject){
 		
 		int index = 1;
 		for(LunchProject project : allProbonoProject) {

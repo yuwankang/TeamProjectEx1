@@ -35,13 +35,13 @@ public class LunchProjectController {
 	/**
 	 * @param project 저장하고자 하는 새로운 프로젝트
 	 */
-	public void LunchProjectInsert(LunchProject project){
+	public void TeamProjectInsert(LunchProject TeamName){
 	
-		String projectName = project.getTeamProjectName();
+		String projectName = TeamName.getTeamName();
 		if(projectName != null && projectName.length() != 0) {
 			try {
 				
-				service.LunchProjectInsert(project);
+				service.teamProjectInsert(TeamName);
 				EndView.successMessage("새로운 프로젝트 등록 성공했습니다.");
 				
 			} catch (Exception e) {
@@ -58,10 +58,10 @@ public class LunchProjectController {
 	 * @param projectName 프로젝트 이름
 	 * @param people      팀
 	 */
-	public void LaunchProjectUpdate(String projectName, Team people) {
+	public void LaunchProjectUpdate(String projectName, Team TeamName) {
 		
 		try {
-			service.teamProjectUpdate(projectName, people);
+			service.teamProjectUpdate(projectName, TeamName);
 		} catch (Exception e) {
 			FailView.failViewMessage(e.getMessage());
 			e.printStackTrace();
@@ -73,15 +73,21 @@ public class LunchProjectController {
 	 * @param projectName 프로젝트 이름
 	 * @param people      음식
 	 */
-	public void foodProjectUpdate(String projectName, Team food) {
-		service.foodProjectUpdate(projectName, food);
+	public void teamProjectUpdate(String TeamName, Team food) {
+		try {
+			service.teamProjectUpdate(TeamName, food);
+		} catch (Exception e) {
+			FailView.failViewMessage(e.getMessage());
+			e.printStackTrace();
+		}
 	}
 	/**
 	 * Project 삭제 - 프로젝트 명으로 해당 프로젝트 삭제
 	 *
 	 * @param projectName 삭제하고자 하는 프로젝트 이름
 	 */
-	public void teamProjectDelete(String projectName) {
-		service.teamProjectDelete(projectName);
+	public void teamProjectDelete(String TeamName) {
+		service.teamProjectDelete(TeamName);
+		
 	}
 }

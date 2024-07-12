@@ -1,5 +1,4 @@
 package lunch.view;
-
 public class FailView {
 	
 	public static void failViewMessage(String message) {
