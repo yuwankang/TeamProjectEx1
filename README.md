@@ -21,17 +21,17 @@
 
 ### 조
   - team team1 = new team("1팀", "BTS", "아이유", "블랙핑크", "김범수", "양식");
-	- team team2 = new team("2팀", "손흥민", "황희찬", "이강인", "김민재", "중식");
-	- team team3 = new team("3팀", "유재석", "박명수", "정형돈", "정준하", "일식");
-	- team team4 = new team("4팀", "강호동", "이수근", "김종민", "은지원", "한식");
-	- team team5 = new team("5팀", "강유완", "곽병찬", "구동길", "김상민", "패스트푸드");
-
-		// 음식 종류
-	- food food1 = new food("양식", "슈바이처 프로젝트");
-	- food food2 = new food("중식", "오드리햅번 프로젝트");
-	- food food3 = new food("일식", "마더테레사 프로젝트");
-	- food food4 = new food("한식", "슈바이처 프로젝트");
-	- food food5 = new food("패스트푸드", "슈바이처 프로젝트");
+  - team team2 = new team("2팀", "손흥민", "황희찬", "이강인", "김민재", "중식");
+  - team team3 = new team("3팀", "유재석", "박명수", "정형돈", "정준하", "일식");
+  - team team4 = new team("4팀", "강호동", "이수근", "김종민", "은지원", "한식");
+  - team team5 = new team("5팀", "강유완", "곽병찬", "구동길", "김상민", "패스트푸드");
+  
+  - // 음식 종류
+  - food food1 = new food("양식", "슈바이처 프로젝트");
+  - food food2 = new food("중식", "오드리햅번 프로젝트");
+  - food food3 = new food("일식", "마더테레사 프로젝트");
+  - food food4 = new food("한식", "슈바이처 프로젝트");
+  - food food5 = new food("패스트푸드", "슈바이처 프로젝트");
 
 
 
