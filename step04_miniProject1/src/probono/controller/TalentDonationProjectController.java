@@ -1,35 +1,22 @@
-package probono.controller;
+package lunch.controller;
 
-import probono.model.dto.Beneficiary;
-import probono.model.dto.Donator;
-import probono.model.dto.TalentDonationProject;
-import probono.service.TalentDonationProjectService;
-import probono.view.EndView;
-import probono.view.FailView;
+import lunch.model.dto.LunchProject;
+import lunch.model.dto.LunchProjectType;
+import lunch.model.dto.team;
+import lunch.model.dto.food;
+import lunch.service.LunchProjectService;
+import lunch.view.EndView;
+import lunch.view.FailView;
 
-public class TalentDonationProjectController {
-	// singleton design pattern
-	/* 객체 생성 수 제약
-	 * 단 하나의 객체를 다른 외부 클래스에 받아서 사용 가능하게는 함
-	 * - 공유 개념, 보유하고 있는 멤버 변수나 메소드 외부 호출 가는ㅇ하게 하기 위함
-	 * - 주의 사항
-	 * 	- 외부에서 해당 객체를 삭제, 수정 금지
-	 * 	- 해당 객체를 보유하고 참조하는 변수값 수정 금지 : private 변수
-	 * 	- 생성자 외부 호출 호출 : private 생성자
-	 * 	- 객체를 공유한다는 건 객체의 주소값 공유 : public
-	 * - 변수명 : instance / 메소드 명 : getInstacne()
-	 * - jpa 기술문서등에선 createInstance()..
-	 * 	
-	 */
+public class LunchProjectController {
 
-	// singleton design pattern
-	private static TalentDonationProjectController instance = new TalentDonationProjectController();
+	private static LunchProjectController instance = new LunchProjectController();
 
-	private static TalentDonationProjectService service = TalentDonationProjectService.getInstance();
+	private static LunchProjectService service = LunchProjectService.getInstance();
 
-	private TalentDonationProjectController() {}
+	private LunchProjectController() {}
 
-	public static TalentDonationProjectController getInstance() {
+	public static LunchProjectController getInstance() {
 		return instance;
 	}
   
@@ -39,10 +26,8 @@ public class TalentDonationProjectController {
 	 * 
 	 * @return 모든 Project
 	 */
-	// 컨트롤러는 반환값을 주지 않는다.
-	// 핵심 기능은 서비스에 있다.
-	public void getDonationProjectsList() {
-		EndView.projectListView(service.getDonationProjectsList());	
+	public void getTeamProjectsList() {
+		EndView.projectListView(service.getTeamProjectsList());	
 	}
 
 
@@ -52,29 +37,25 @@ public class TalentDonationProjectController {
 	 * @param projectName 프로젝트 이름
 	 * @return TalentDonationProject 검색된 프로젝트
 	 */
-	public void getDonationProject(String projectName) {
-		EndView.projectView(service.getDonationProject(projectName));
+	public void getTeamProject(String projectName) {
+		EndView.projectView(service.getTeamProject(projectName));
 	}
 
 	
 	/**
-	 * 브라우저 입력창(form) 입력없이 데이터 전송 -"" 문자열 객체, 길이는 0
-	 * 미존재하는 요청 = server에선 null
-	 * 새로운 Project 추가
-	 * 
 	 * @param project 저장하고자 하는 새로운 프로젝트
 	 */
-	public void donationProjectInsert(TalentDonationProject project){
+	public void LunchProjectInsert(LunchProject project){
 	
-		String projectName = project.getTalentDonationProjectName();
+		String projectName = project.getTeamProjectName();
 		if(projectName != null && projectName.length() != 0) {
 			try {
 				
-				service.donationProjectInsert(project);
+				service.LunchProjectInsert(project);
 				EndView.successMessage("새로운 프로젝트 등록 성공했습니다.");
 				
 			} catch (Exception e) {
-				FailView.failViewMessage(e.getMessage()); //실패인 경우 예외로 end user 서비스
+				FailView.failViewMessage(e.getMessage()); 
 				e.printStackTrace();
 			}
 		}else {
@@ -83,15 +64,15 @@ public class TalentDonationProjectController {
 	}
 
 	/**
-	 * Project의 기부자 수정 - 프로젝트 명으로 검색해서 해당 프로젝트의 기부자 수정
+	 * Project의 팀 수정 - 프로젝트 명으로 검색해서 해당 프로젝트의 기부자 수정
 	 * 
 	 * @param projectName 프로젝트 이름
-	 * @param people      기부자
+	 * @param people      팀
 	 */
-	public void donationProjectUpdate(String projectName, Donator people) {
+	public void LaunchProjectUpdate(String projectName, Team people) {
 		
 		try {
-			service.donationProjectUpdate(projectName, people);
+			service.teamProjectUpdate(projectName, people);
 		} catch (Exception e) {
 			FailView.failViewMessage(e.getMessage());
 			e.printStackTrace();
@@ -99,13 +80,13 @@ public class TalentDonationProjectController {
 	}
 
 	/**
-	 * Project의 수혜자 수정 - 프로젝트 명으로 검색해서 해당 프로젝트의 수혜자 수정
+	 * Project의 음식 수정 - 프로젝트 명으로 검색해서 해당 프로젝트의 수혜자 수정
 	 * 
 	 * @param projectName 프로젝트 이름
-	 * @param people      수혜자
+	 * @param people      음식
 	 */
-	public void beneficiaryProjectUpdate(String projectName, Beneficiary people) {
-		service.beneficiaryProjectUpdate(projectName, people);
+	public void foodProjectUpdate(String projectName, food food) {
+		service.foodProjectUpdate(projectName, food);
 	}
 
 	/**
@@ -113,8 +94,8 @@ public class TalentDonationProjectController {
 	 * 
 	 * @param projectName 삭제하고자 하는 프로젝트 이름
 	 */
-	public void donationProjectDelete(String projectName) {
-		service.donationProjectDelete(projectName);
+	public void teamProjectDelete(String projectName) {
+		service.teamProjectDelete(projectName);
 	}
 
 }
