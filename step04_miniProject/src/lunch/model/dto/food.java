@@ -1,5 +1,5 @@
 package lunch.model.dto;
 
-public class dessert {
+public class food {
 
 }
